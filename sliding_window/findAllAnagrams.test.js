@@ -16,3 +16,7 @@ test("s = 'abcdaedgzae', p = 'a' output = [0,4,9]", () => {
   expect(findAllAnagrams('abcdaedgzae', 'a')).toStrictEqual([0,4,9]);
 });
 
+test("s = 'abcdaedgz a e', p = 'a' output = [0,4,10]", () => {
+  expect(findAllAnagrams('abcdaedgz a e', 'a')).toStrictEqual([0,4,10]);
+});
+

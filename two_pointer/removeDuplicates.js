@@ -6,24 +6,21 @@
  * @return {number}
  */
 function removeDuplicates(nums) {
-    let len = nums.length;
+
+    // only 1 element;
+    if (nums.length <= 1) return nums.length;
+
     let current = 1;
-    let next = 1;
-    
-    while(next < len) {
-        let temp = nums[next];
-        if (nums[current] == nums[next]) {
-            next++;
-        }
-        else {
-            nums[current] = temp;
-            current++;
+    for (let i = 1; i < nums.length; i++) {
+
+        // if current doesnt equal previous
+        if (nums[i] != nums[i - 1]) {
+
+            // set num then increment
+            nums[current++] = nums[i];
         }
     }
-
-    for (let i = current+1; i < nums.length; i++) {
-        nums[i] = null;
-    }
-
-    return current+1;
+    return current;
 }
+
+module.exports = removeDuplicates;
